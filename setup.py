@@ -7,7 +7,7 @@
 plugin_identifier = "OctoTuya"
 
 # The plugin's python package, should be "octoprint_<plugin identifier>", has to be unique
-plugin_package = "OctoTuya"
+plugin_package = "octoprint_OctoTuya"
 
 # The plugin's human readable name. Can be overwritten within OctoPrint's internal data via __plugin_name__ in the
 # plugin module
