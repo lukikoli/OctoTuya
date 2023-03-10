@@ -1,0 +1,3 @@
+[octoprint.plugin]
+OctoTuya = octoprint_OctoTuya
+

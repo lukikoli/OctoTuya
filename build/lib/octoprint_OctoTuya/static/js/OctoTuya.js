@@ -15,7 +15,6 @@ $(function() {
         // TODO: Implement your plugin's view model here.
 
 
-        
         toggle = function() {
             $.ajax({
                 url:         "/api/plugin/OctoTuya",
@@ -30,6 +29,40 @@ $(function() {
             log.info("OCTOTUYA");
             return true;
         };
+
+        self.disconnectPrinter = function() {
+            $.ajax({
+                url:         "/api/plugin/OctoTuya",
+                type:        "POST",
+                contentType: "application/json",
+                dataType:    "json",
+                headers:     {"X-Api-Key": UI_API_KEY},
+                data:        JSON.stringify({"command": "printer", "state":false}),
+                complete: function () {
+                }
+            });
+            log.info("CPrinter");
+            return true;
+		}
+
+		self.connectPrinter = function() {
+            $.ajax({
+                url:         "/api/plugin/OctoTuya",
+                type:        "POST",
+                contentType: "application/json",
+                dataType:    "json",
+                headers:     {"X-Api-Key": UI_API_KEY},
+                data:        JSON.stringify({"command": "printer", "state":true}),
+                complete: function () {
+                }
+            });
+            log.info("CPrinter");
+            return true;
+		}
+
+            
+
+
     }
 
     /* view model class, parameters for constructor, container to bind to

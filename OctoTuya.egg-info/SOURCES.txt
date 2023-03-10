@@ -1,0 +1,12 @@
+MANIFEST.in
+README.md
+requirements.txt
+setup.py
+OctoTuya.egg-info/PKG-INFO
+OctoTuya.egg-info/SOURCES.txt
+OctoTuya.egg-info/dependency_links.txt
+OctoTuya.egg-info/entry_points.txt
+OctoTuya.egg-info/not-zip-safe
+OctoTuya.egg-info/requires.txt
+OctoTuya.egg-info/top_level.txt
+octoprint_OctoTuya/__init__.py
