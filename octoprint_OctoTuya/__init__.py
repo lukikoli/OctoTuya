@@ -17,8 +17,8 @@ class OctoTuyaPlugin(octoprint.plugin.StartupPlugin,
         self._logger.info("LOCAL_KEY: " + self._settings.get(["LOCAL_KEY"]))
         self._logger.info("DEVICE_STATE: " + str(self._settings.get(["DEVICE_STATE"])))
         self._logger.info("Version: 0.0.1")
-
         self.CreateDeviceInstance()
+
 
     def get_template_configs(self):
         return [
@@ -50,7 +50,6 @@ class OctoTuyaPlugin(octoprint.plugin.StartupPlugin,
         dev.set_version(3.3)
     
 
-
     def ToggleDevice(self):
             self.CheckDevState()
             self._logger.info("OLD DEVICE STATE: " + str(self._settings.get(["DEVICE_STATE"])))
@@ -69,7 +68,6 @@ class OctoTuyaPlugin(octoprint.plugin.StartupPlugin,
             data = dev.status()
             command = data['dps']['1']
             self._settings.set(["DEVICE_STATE"], command)
-            # Führen Sie in Python eine Aktion aus, um die LED ein- und auszuschalten
 
 
     #EVENTHANDLER PLUGIN
@@ -87,8 +85,6 @@ class OctoTuyaPlugin(octoprint.plugin.StartupPlugin,
 
         if event == Events.DISCONNECTING:
             dev.turn_off()
-
-        
 
 __plugin_name__ = "OctoTuya"
 __plugin_pythoncompat__ = ">=3.7,<4"
